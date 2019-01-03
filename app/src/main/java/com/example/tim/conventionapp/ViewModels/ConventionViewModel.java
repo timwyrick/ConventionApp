@@ -5,6 +5,8 @@ import android.arch.lifecycle.ViewModel;
 public class ConventionViewModel extends ViewModel {
     private String AppName;
     private String AppLogoFilePath;
+    private boolean HasNotifications;
+    private int NumNotifications;
 
     public String GetName()
     {
@@ -24,5 +26,31 @@ public class ConventionViewModel extends ViewModel {
     public void SetLogoFilePath(String filePath)
     {
         this.AppLogoFilePath = filePath;
+    }
+
+    public void SetHasNotifications(boolean value) {
+        this.HasNotifications = value;
+    }
+
+    public boolean GetHasNotifications() {
+        return this.HasNotifications;
+    }
+
+    public void SetNumNotifications(int num){
+        this.NumNotifications = num;
+    }
+
+    public void IncrementNotifications() {
+        this.NumNotifications++;
+    }
+
+    public void DecrementNotifications()
+    {
+        this.NumNotifications--;
+    }
+
+    public int GetNumNotifications()
+    {
+       return this.NumNotifications;
     }
 }
